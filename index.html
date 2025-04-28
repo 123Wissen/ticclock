@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Clock - Time Management Suite</title>    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A comprehensive time management suite featuring digital/analog clocks, alarms, countdown timer, stopwatch, world clock, Pomodoro timer, and event reminders.">
+    <meta name="keywords" content="clock, time management, alarm clock, timer, stopwatch, world clock, pomodoro timer, reminders">
+    <meta name="author" content="Tic Clock">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ticclock.com/">
+    <meta property="og:title" content="Tic Clock - Modern Time Management Suite">
+    <meta property="og:description" content="Manage your time effectively with our all-in-one clock suite featuring alarms, timers, and productivity tools.">
+    <meta property="og:image" content="assets/icons/ticclock-preview.png">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ticclock.com/">
+    <meta name="twitter:title" content="Tic Clock - Modern Time Management Suite">
+    <meta name="twitter:description" content="Manage your time effectively with our all-in-one clock suite featuring alarms, timers, and productivity tools.">
+    <meta name="twitter:image" content="assets/icons/ticclock-preview.png">
+    
+    <!-- Theme Color for Browser -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-navbutton-color" content="#007bff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#007bff">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Tic Clock">
+    <meta name="apple-mobile-web-app-title" content="Tic Clock">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" type="image/png" href="favicon.svg">
+    <link rel="mask-icon" href="favicon.svg" color="#007bff">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-effect" role="navigation" aria-label="Main navigation">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-link">
+                    <h1 class="logo">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        Tic Clock
+                    </h1>
+                </a>
+                <button class="btn btn-link d-lg-none" id="closeSidebar" aria-label="Close sidebar">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#digitalClock">
+                            <i class="fas fa-clock"></i>
+                            <span>Clock</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#alarmSection">
+                            <i class="fas fa-bell"></i>
+                            <span>Alarms</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timerSection">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span>Timer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stopwatchSection">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>Stopwatch</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#worldClockSection">
+                            <i class="fas fa-globe"></i>
+                            <span>World Clock</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pomodoroSection">
+                            <i class="fas fa-tasks"></i>
+                            <span>Pomodoro</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn btn-link" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <!-- Mobile Header -->
+            <header class="mobile-header d-lg-none glass-effect">
+                <button class="btn btn-link" id="toggleSidebar" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <h1 class="logo">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        Tic Clock
+                    </h1>
+                </a>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Digital Clock Section -->
+                <section id="digitalClock" class="dashboard-section glass-effect" aria-labelledby="digitalClockTitle">
+                    <div class="section-header">
+                        <h2 id="digitalClockTitle">Digital Clock</h2>
+                    </div>
+                    <div class="usage-guide mb-3">
+                        <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                        <ul class="list-unstyled small">
+                            <li>• Click "12/24 Hour" to switch time format</li>
+                            <li>• Toggle analog clock display with "Show/Hide Analog"</li>
+                            <li>• Enable speaking clock with the speaker icon</li>
+                        </ul>
+                    </div>
+                    <div class="clock-display text-center">
+                        <div id="time" class="display-1"></div>
+                        <div id="date" class="h4"></div>
+                    </div>
+                    <div class="analog-clock neumorphic mt-4">
+                        <div class="clock-hand hour-hand"></div>
+                        <div class="clock-hand minute-hand"></div>
+                        <div class="clock-hand second-hand"></div>
+                        <div class="clock-center"></div>
+                    </div>
+                    <div class="btn-group mt-3">
+                        <button class="btn btn-outline-primary" id="toggle12Hour">12/24 Hour</button>
+                        <button class="btn btn-outline-primary" id="toggleAnalog">Show/Hide Analog</button>
+                        <button class="btn btn-outline-primary" id="toggleSpeak">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid" role="group" aria-label="Time management tools">
+                    <!-- Alarm Clock -->
+                    <section id="alarmSection" class="dashboard-card glass-effect" aria-labelledby="alarmTitle">
+                        <div class="card-header">
+                            <h3 id="alarmTitle">Alarms</h3>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#alarmModal" aria-label="Add new alarm">
+                                <i class="fas fa-plus" aria-hidden="true"></i> Add
+                            </button>
+                        </div>
+                        <div class="usage-guide mb-3 p-3">
+                            <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Click "Add" to set a new alarm</li>
+                                <li>• Choose time and ringtone</li>
+                                <li>• Toggle alarms on/off with the bell icon</li>
+                                <li>• Delete alarms with the trash icon</li>
+                            </ul>
+                        </div>
+                        <div id="alarmList" class="card-body"></div>
+                    </section>
+
+                    <!-- Countdown Timer -->
+                    <section id="timerSection" class="dashboard-card glass-effect" aria-labelledby="timerTitle">
+                        <div class="card-header">
+                            <h3 id="timerTitle">Timer</h3>
+                        </div>
+                        <div class="usage-guide mb-3 p-3">
+                            <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Enter hours, minutes, and seconds</li>
+                                <li>• Click "Start" to begin countdown</li>
+                                <li>• Pause/Resume anytime</li>
+                                <li>• Reset timer with "Reset" button</li>
+                                <li>• Notification when timer completes</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div id="timer" class="display-4 mb-3">00:00:00</div>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" id="hours" placeholder="HH" min="0" max="23">
+                                <input type="number" class="form-control" id="minutes" placeholder="MM" min="0" max="59">
+                                <input type="number" class="form-control" id="seconds" placeholder="SS" min="0" max="59">
+                            </div>
+                            <div class="btn-group w-100">
+                                <button class="btn btn-primary" id="startTimer">Start</button>
+                                <button class="btn btn-warning" id="pauseTimer">Pause</button>
+                                <button class="btn btn-danger" id="resetTimer">Reset</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Stopwatch -->
+                    <section id="stopwatchSection" class="dashboard-card glass-effect" aria-labelledby="stopwatchTitle">
+                        <div class="card-header">
+                            <h3 id="stopwatchTitle">Stopwatch</h3>
+                        </div>
+                        <div class="usage-guide mb-3 p-3">
+                            <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Click "Start" to begin timing</li>
+                                <li>• Record lap times with "Lap" button</li>
+                                <li>• Pause/Resume anytime</li>
+                                <li>• Reset to zero with "Reset"</li>
+                                <li>• View lap history below</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div id="stopwatch" class="display-4 mb-3">00:00:00.000</div>
+                            <div class="btn-group w-100 mb-3">
+                                <button class="btn btn-primary" id="startStopwatch">Start</button>
+                                <button class="btn btn-warning" id="pauseStopwatch">Pause</button>
+                                <button class="btn btn-danger" id="resetStopwatch">Reset</button>
+                            </div>
+                            <button class="btn btn-secondary w-100" id="lapButton">Lap</button>
+                            <div id="lapTimes" class="mt-3 overflow-auto" style="max-height: 150px;"></div>
+                        </div>
+                    </section>
+
+                    <!-- World Clock -->
+                    <section id="worldClockSection" class="dashboard-card glass-effect" aria-labelledby="worldClockTitle">
+                        <div class="card-header">
+                            <h3 id="worldClockTitle">World Clock</h3>
+                            <button class="btn btn-primary btn-sm" id="addWorldClock" aria-label="Add new timezone">
+                                <i class="fas fa-plus" aria-hidden="true"></i> Add
+                            </button>
+                        </div>
+                        <div class="usage-guide mb-3 p-3">
+                            <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Click "Add" to add a new timezone</li>
+                                <li>• Select city/timezone from the list</li>
+                                <li>• Remove clocks with the × button</li>
+                                <li>• Times update automatically</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div id="worldClocks"></div>
+                        </div>
+                    </section>
+
+                    <!-- Pomodoro Timer -->
+                    <section id="pomodoroSection" class="dashboard-card glass-effect" aria-labelledby="pomodoroTitle">
+                        <div class="card-header">
+                            <h3 id="pomodoroTitle">Pomodoro</h3>
+                        </div>
+                        <div class="usage-guide mb-3 p-3">
+                            <h6><i class="fas fa-info-circle"></i> How to use:</h6>
+                            <ul class="list-unstyled small">
+                                <li>• Select timer type: Focus (25min), Short Break (5min), or Long Break (15min)</li>
+                                <li>• Click "Start" to begin session</li>
+                                <li>• Take short breaks after each focus session</li>
+                                <li>• Take long break after 4 focus sessions</li>
+                                <li>• Notification when each session ends</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="pomodoro-phase mb-2"></div>
+                            <div id="pomodoroTimer" class="display-4 mb-3">25:00</div>
+                            <div class="btn-group w-100 mb-3">
+                                <button class="btn btn-primary" id="startPomodoro">Start</button>
+                                <button class="btn btn-warning" id="pausePomodoro">Pause</button>
+                                <button class="btn btn-danger" id="resetPomodoro">Reset</button>
+                            </div>
+                            <select class="form-select" id="pomodoroType">
+                                <option value="focus">Focus (25min)</option>
+                                <option value="short">Short Break (5min)</option>
+                                <option value="long">Long Break (15min)</option>
+                            </select>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Theme Options -->
+    <div class="theme-options glass-effect" style="display: none;">
+        <div class="d-flex flex-column align-items-center">
+            <h6 class="mb-3">Theme Colors</h6>
+            <div class="color-option" data-color="#007bff" style="background-color: #007bff;"></div>
+            <div class="color-option" data-color="#28a745" style="background-color: #28a745;"></div>
+            <div class="color-option" data-color="#dc3545" style="background-color: #dc3545;"></div>
+            <div class="color-option" data-color="#6f42c1" style="background-color: #6f42c1;"></div>
+        </div>
+        <div class="mt-3">
+            <h6 class="mb-2">Background</h6>
+            <select class="form-select form-select-sm" id="backgroundSelect">
+                <option value="solid">Solid Color</option>
+                <option value="gradient">Gradient</option>
+                <option value="pattern">Pattern</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Guide -->
+    <div class="shortcut-guide glass-effect">
+        Press '?' to view keyboard shortcuts
+    </div>
+
+    <!-- Alarm Modal -->
+    <div class="modal fade" id="alarmModal" tabindex="-1" aria-labelledby="alarmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alarmModalLabel">Set Alarm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="alarmForm">
+                        <div class="mb-3">
+                            <label class="form-label">Time</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="alarmHour" min="1" max="12" required>
+                                <input type="number" class="form-control" id="alarmMinute" min="0" max="59" required>
+                                <select class="form-select" id="alarmAmPm">
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ringtone</label>
+                            <select class="form-select" id="alarmSound"></select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveAlarm">Save Alarm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- World Clock Modal -->
+    <div class="modal fade" id="worldClockModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-select" id="timezoneSelect"></select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="addTimezone">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div class="modal fade" id="shortcutsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title">Keyboard Shortcuts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6>Timer Controls</h6>
+                            <ul class="list-unstyled">
+                                <li><kbd>Space</kbd> Start/Pause</li>
+                                <li><kbd>R</kbd> Reset</li>
+                                <li><kbd>L</kbd> Lap (Stopwatch)</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6>General</h6>
+                            <ul class="list-unstyled">
+                                <li><kbd>T</kbd> Toggle Theme</li>
+                                <li><kbd>A</kbd> Toggle Analog</li>
+                                <li><kbd>?</kbd> Show Shortcuts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/alarm.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/worldclock.js"></script>
+    <script src="js/pomodoro.js"></script>
+    <script src="js/shortcuts.js"></script>
+</body>
+</html> 

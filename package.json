@@ -1,0 +1,31 @@
+{
+    "name": "tclock",
+    "version": "1.0.0",
+    "description": "A comprehensive time management suite with world clock, alarms, timer, stopwatch, task scheduler, sleep tracker, and weather information.",
+    "main": "js/main.js",
+    "type": "module",
+    "scripts": {
+        "start": "serve .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "clock",
+        "time",
+        "alarm",
+        "timer",
+        "stopwatch",
+        "weather",
+        "tasks",
+        "sleep"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "chart.js": "^4.4.1",
+        "serve": "^14.2.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.56.0",
+        "prettier": "^3.1.1"
+    }
+} 
