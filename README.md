@@ -1,5 +1,15 @@
 # TClock - Time Management Suite
 
+![image](https://github.com/user-attachments/assets/d13125d0-ee6a-4475-ba3b-d6721619408a)
+
+
+![image](https://github.com/user-attachments/assets/77d977d2-040f-4e9a-b995-23c388d93e78)
+
+
+
+
+
+
 A comprehensive time management web application with multiple clock-related features and a modern, responsive interface.
 
 ## Features
@@ -72,7 +82,7 @@ A comprehensive time management web application with multiple clock-related feat
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/tclock.git
+git clone https://github.com/123Wissen/tclock.git
 ```
 
 2. Open `index.html` in a modern web browser.
@@ -91,18 +101,6 @@ No additional installation or build steps required! The application uses CDN-hos
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
